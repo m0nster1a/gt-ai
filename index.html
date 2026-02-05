@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Sheet</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #2d2d2d;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        h1 { text-align: center; color: #4CAF50; }
+        
+        .section { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #aaa; }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            box-sizing: border-box; /* Fixes padding issues */
+            font-size: 16px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        button {
+            background-color: #c62828;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Character Sheet</h1>
+
+    <div class="section">
+        <label>Character Name</label>
+        <input type="text" id="charName" placeholder="Enter name...">
+    </div>
+
+    <div class="section stats-grid">
+        <div>
+            <label>HP (Health)</label>
+            <input type="number" id="hp" placeholder="0">
+        </div>
+        <div>
+            <label>MP (Mana/Stamina)</label>
+            <input type="number" id="mp" placeholder="0">
+        </div>
+        <div>
+            <label>Strength</label>
+            <input type="number" id="str" placeholder="0">
+        </div>
+        <div>
+            <label>Speed</label>
+            <input type="number" id="spd" placeholder="0">
+        </div>
+    </div>
+
+    <div class="section">
+        <label>Inventory / Notes</label>
+        <textarea id="notes" rows="6" placeholder="List items here..."></textarea>
+    </div>
+
+    <button onclick="clearData()">Reset Sheet</button>
+</div>
+
+<script>
+    // 1. Get all inputs and textareas
+    const inputs = document.querySelectorAll('input, textarea');
+
+    // 2. Load saved data when page opens
+    inputs.forEach(input => {
+        const savedValue = localStorage.getItem(input.id);
+        if (savedValue) {
+            input.value = savedValue;
+        }
+        
+        // 3. Save data whenever you type
+        input.addEventListener('input', () => {
+            localStorage.setItem(in
