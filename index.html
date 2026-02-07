@@ -20,7 +20,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: #e0e0e0;
-            padding: 20px;
+            padding: 12px;
             min-height: 100vh;
         }
         
@@ -31,38 +31,38 @@
         
         header {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 20px;
+            margin-bottom: 20px;
+            padding: 12px;
         }
         
         h1 {
             color: #ffffff;
-            margin-bottom: 10px;
-            font-size: clamp(28px, 5vw, 42px);
+            margin-bottom: 6px;
+            font-size: clamp(24px, 4vw, 36px);
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .subtitle {
             color: #b0b0b0;
-            font-size: clamp(14px, 3vw, 18px);
+            font-size: clamp(13px, 2.5vw, 16px);
             font-weight: 300;
         }
 
         .sheet-selector {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 16px;
         }
 
         .sheet-selector select {
             background: #333333;
             border: 2px solid #5a9fd4;
             color: #e0e0e0;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
             cursor: pointer;
-            min-width: 200px;
+            min-width: 180px;
         }
 
         .sheet-selector select:focus {
@@ -72,8 +72,8 @@
         
         .table-wrapper {
             background: rgba(42, 42, 42, 0.95);
-            border-radius: 16px;
-            padding: 30px;
+            border-radius: 12px;
+            padding: 16px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(10px);
             overflow-x: auto;
@@ -89,19 +89,19 @@
         table.dataTable thead th {
             background: linear-gradient(135deg, #3a3a4a 0%, #2d2d3d 100%);
             color: #ffffff;
-            border-bottom: 3px solid #5a9fd4;
-            padding: 16px 12px;
+            border-bottom: 2px solid #5a9fd4;
+            padding: 10px 8px;
             font-weight: 600;
             text-align: left;
-            font-size: 15px;
-            letter-spacing: 0.5px;
+            font-size: 13px;
+            letter-spacing: 0.3px;
             text-transform: uppercase;
         }
         
         table.dataTable tbody td {
-            padding: 14px 12px;
+            padding: 8px;
             border-bottom: 1px solid #3a3a3a;
-            font-size: 15px;
+            font-size: 13px;
         }
         
         table.dataTable tbody tr {
@@ -115,10 +115,10 @@
         }
         
         table.dataTable tbody td .colored-cell {
-            padding: 6px 12px;
-            border-radius: 6px;
+            padding: 4px 10px;
+            border-radius: 5px;
             display: inline-block;
-            min-width: 80px;
+            min-width: 70px;
             text-align: center;
             font-weight: 500;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -130,7 +130,7 @@
         
         .dataTables_wrapper .dataTables_length,
         .dataTables_wrapper .dataTables_filter {
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
         
         .dataTables_filter {
@@ -140,17 +140,18 @@
         .dataTables_filter label {
             font-weight: 500;
             color: #b0b0b0;
+            font-size: 14px;
         }
         
         .dataTables_filter input {
             background: #333333;
             border: 2px solid #444444;
             color: #e0e0e0;
-            padding: 10px 16px;
-            border-radius: 8px;
-            margin-left: 10px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin-left: 8px;
             transition: all 0.3s ease;
-            font-size: 15px;
+            font-size: 13px;
         }
         
         .dataTables_filter input:focus {
@@ -162,17 +163,18 @@
         .dataTables_length label {
             font-weight: 500;
             color: #b0b0b0;
+            font-size: 14px;
         }
         
         .dataTables_length select {
             background: #333333;
             border: 2px solid #444444;
             color: #e0e0e0;
-            padding: 8px 12px;
-            border-radius: 8px;
-            margin: 0 10px;
+            padding: 6px 10px;
+            border-radius: 6px;
+            margin: 0 8px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
         }
         
         .dataTables_length select:focus {
@@ -182,12 +184,12 @@
         
         .dataTables_info {
             color: #b0b0b0;
-            padding-top: 20px;
-            font-size: 14px;
+            padding-top: 12px;
+            font-size: 13px;
         }
         
         .dataTables_paginate {
-            padding-top: 20px;
+            padding-top: 12px;
             float: right;
         }
         
@@ -195,12 +197,13 @@
             background: #333333;
             color: #e0e0e0 !important;
             border: 2px solid #444444;
-            padding: 8px 16px;
-            margin: 0 4px;
-            border-radius: 8px;
+            padding: 6px 12px;
+            margin: 0 3px;
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 500;
+            font-size: 13px;
         }
         
         .dataTables_paginate .paginate_button:hover {
@@ -228,133 +231,95 @@
             transform: none;
         }
         
-        .loading {
+        #loading {
             text-align: center;
-            padding: 60px 20px;
-            color: #b0b0b0;
-            font-size: 20px;
-        }
-        
-        .loading-spinner {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            border: 4px solid #333;
-            border-top-color: #5a9fd4;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        .error {
-            text-align: center;
-            padding: 40px 20px;
-            color: #ff6b6b;
+            padding: 30px;
             font-size: 18px;
-            background: rgba(255, 107, 107, 0.1);
-            border-radius: 12px;
-            border: 2px solid rgba(255, 107, 107, 0.3);
+            color: #5a9fd4;
+            display: block;
         }
         
-        @media screen and (max-width: 768px) {
+        #error {
+            text-align: center;
+            padding: 30px;
+            font-size: 16px;
+            color: #ff6b6b;
+            display: none;
+        }
+        
+        #excelTable {
+            display: none;
+        }
+
+        #sheetSelector {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
             body {
-                padding: 10px;
-            }
-            
-            header {
-                margin-bottom: 20px;
-                padding: 10px;
+                padding: 8px;
             }
             
             .table-wrapper {
-                padding: 20px 15px;
-                border-radius: 12px;
+                padding: 12px;
+                border-radius: 8px;
             }
             
-            table.dataTable thead th,
+            table.dataTable thead th {
+                padding: 8px 6px;
+                font-size: 12px;
+            }
+            
             table.dataTable tbody td {
-                padding: 10px 8px;
-                font-size: 13px;
-            }
-            
-            table.dataTable tbody td .colored-cell {
-                min-width: 60px;
-                font-size: 13px;
-                padding: 4px 8px;
+                padding: 6px;
+                font-size: 12px;
             }
             
             .dataTables_filter input,
             .dataTables_length select {
-                font-size: 14px;
-                padding: 8px 12px;
-            }
-            
-            .dataTables_wrapper .dataTables_length,
-            .dataTables_wrapper .dataTables_filter {
-                float: none;
-                text-align: left;
-                margin-bottom: 15px;
-            }
-            
-            .dataTables_paginate {
-                float: none;
-                text-align: center;
+                padding: 5px 8px;
+                font-size: 12px;
             }
             
             .dataTables_paginate .paginate_button {
-                padding: 6px 12px;
-                margin: 2px;
-                font-size: 13px;
+                padding: 5px 8px;
+                font-size: 12px;
             }
-
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 22px;
+            }
+            
+            .subtitle {
+                font-size: 12px;
+            }
+            
             .sheet-selector select {
-                width: 100%;
-                max-width: 300px;
+                min-width: 150px;
+                padding: 6px 12px;
             }
-        }
-        
-        .table-wrapper::-webkit-scrollbar {
-            height: 10px;
-        }
-        
-        .table-wrapper::-webkit-scrollbar-track {
-            background: #2a2a2a;
-            border-radius: 10px;
-        }
-        
-        .table-wrapper::-webkit-scrollbar-thumb {
-            background: #5a9fd4;
-            border-radius: 10px;
-        }
-        
-        .table-wrapper::-webkit-scrollbar-thumb:hover {
-            background: #4a8fc4;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>📦 Excel Data Viewer</h1>
-            <p class="subtitle">Interactive inventory viewer with auto-detected colors</p>
+            <h1>📦 Crate Contents Viewer</h1>
+            <p class="subtitle">Browse and search your Excel data</p>
         </header>
-
-        <div class="sheet-selector" id="sheetSelector" style="display:none;">
-            <label for="sheetSelect" style="color: #b0b0b0; margin-right: 10px; font-weight: 500;">Select Sheet:</label>
-            <select id="sheetSelect"></select>
-        </div>
         
+        <div id="sheetSelector" class="sheet-selector">
+            <select id="sheetSelect">
+                <!-- Populated dynamically -->
+            </select>
+        </div>
+
         <div class="table-wrapper">
-            <div id="loading" class="loading">
-                <div class="loading-spinner"></div>
-                <div>Loading your data...</div>
-            </div>
-            <div id="error" class="error" style="display:none;"></div>
-            <table id="excelTable" class="display" style="display:none;"></table>
+            <div id="loading">⏳ Loading Excel data...</div>
+            <div id="error"></div>
+            <table id="excelTable" class="display"></table>
         </div>
     </div>
 
