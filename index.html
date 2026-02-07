@@ -49,6 +49,77 @@
             font-weight: 300;
         }
 
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            padding: 0 12px;
+        }
+
+        .nav-button {
+            background: #333333;
+            border: 2px solid #444444;
+            color: #e0e0e0;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+
+        .nav-button:hover {
+            background: #404040;
+            border-color: #5a9fd4;
+            transform: translateY(-2px);
+        }
+
+        .nav-button.active {
+            background: linear-gradient(135deg, #5a9fd4 0%, #4a8fc4 100%);
+            border-color: #5a9fd4;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(90, 159, 212, 0.4);
+        }
+
+        .tab-content {
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-wrapper {
+            background: rgba(42, 42, 42, 0.95);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .info-wrapper h2 {
+            color: #5a9fd4;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+
+        .info-wrapper p {
+            color: #b0b0b0;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
         .sheet-selector {
             text-align: center;
             margin-bottom: 16px;
@@ -260,6 +331,17 @@
                 padding: 8px;
             }
             
+            .nav-bar {
+                gap: 6px;
+                padding: 0 8px;
+            }
+
+            .nav-button {
+                padding: 8px 16px;
+                font-size: 13px;
+                min-width: 110px;
+            }
+            
             .table-wrapper {
                 padding: 12px;
                 border-radius: 8px;
@@ -295,6 +377,17 @@
             .subtitle {
                 font-size: 12px;
             }
+
+            .nav-bar {
+                flex-direction: row;
+                gap: 6px;
+            }
+
+            .nav-button {
+                padding: 8px 12px;
+                font-size: 12px;
+                min-width: 100px;
+            }
             
             .sheet-selector select {
                 min-width: 150px;
@@ -310,16 +403,30 @@
             <p class="subtitle">Browse and search your Excel data</p>
         </header>
         
-        <div id="sheetSelector" class="sheet-selector">
+        <nav class="nav-bar">
+            <button class="nav-button" data-tab="info">ℹ️ Info</button>
+            <button class="nav-button active" data-tab="loot-table">🎲 Loot Table</button>
+        </nav>
+
+        <div id="info-tab" class="tab-content" style="display: none;">
+            <div class="info-wrapper">
+                <h2>Information</h2>
+                <p>Welcome to the Crate Contents Viewer. Use the tabs above to navigate between information and the loot table.</p>
+            </div>
+        </div>
+
+        <div id="loot-table-tab" class="tab-content">
+            <div id="sheetSelector" class="sheet-selector">
             <select id="sheetSelect">
                 <!-- Populated dynamically -->
             </select>
         </div>
 
-        <div class="table-wrapper">
-            <div id="loading">⏳ Loading Excel data...</div>
-            <div id="error"></div>
-            <table id="excelTable" class="display"></table>
+            <div class="table-wrapper">
+                <div id="loading">⏳ Loading Excel data...</div>
+                <div id="error"></div>
+                <table id="excelTable" class="display"></table>
+            </div>
         </div>
     </div>
 
@@ -549,6 +656,29 @@
                 console.error('Error loading Excel file:', error);
                 showError(error.message);
             });
+
+        // Tab navigation
+        document.querySelectorAll('.nav-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetTab = this.getAttribute('data-tab');
+                
+                // Remove active class from all buttons
+                document.querySelectorAll('.nav-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.style.display = 'none';
+                });
+                
+                // Show selected tab content
+                document.getElementById(targetTab + '-tab').style.display = 'block';
+            });
+        });
     </script>
 </body>
 </html>
